@@ -1,26 +1,50 @@
-import java.util.Scanner;
 
 public class FirstClass {
 
-    public static void main(String[] args) {
-        int counterofMatches = 0;
-        int sumofMatches = 0;
+    public Integer id;
+    public String name;
 
-        for(int loopNumber = 1; loopNumber <= 100; loopNumber++) {
-            if((loopNumber % 3 == 0) && (loopNumber % 5 == 0)) {
-                sumofMatches += loopNumber;
-                System.out.println("Found a match = " + loopNumber);
-            }
+    // this information is optional
+    public String location;
 
-            if (counterofMatches == 5) {
-                break;
-            }
-        }
+    private String password;
 
-        System.out.println("Sum = " + sumofMatches);
+    // constructor with location
+    public FirstClass(Integer id, String name,String location, String password){
+        this.id = id;
+        this.name = name;
+        this.location = location;
+        this.password = password;
+    }
 
+    // construction without location
+    public FirstClass(Integer id, String name, String password){
+        this.id = id;
+        this.name = name;
+        this.password = password;
+    }
 
-        }
+    // a function that return a string has value of id and name
+    public String printValue(){
+        return this.id+" : "+this.name;
     }
 
 
+    // password setter
+    public void setPassword(String password){
+
+        if (password.length() < 5){
+            System.out.println("You cannot assigned a value of size less than 5 to a password");
+        } else
+            this.password = password;
+    }
+
+    // password getter
+    public String getPassword(){
+
+        return this.password;
+    }
+
+}
+
+//class example
